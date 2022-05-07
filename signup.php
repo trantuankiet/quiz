@@ -11,7 +11,7 @@ class signup extends controller {
       isset($data["confirm"]) ?: "",
     ]);
 
-    if ($validate || $data["password"] == $data["confirm"]) {
+    if ($validate || $data["password"] != $data["confirm"]) {
       $this->error();
       exit();
     }
